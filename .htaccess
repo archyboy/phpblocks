@@ -1,0 +1,17 @@
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+<Files autoload.php>
+order allow,deny
+deny from all
+</Files>
+
+
+ErrorDocument 404 /index.php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
