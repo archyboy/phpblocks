@@ -1,0 +1,55 @@
+/*
+Copyright 2016 Anders Habberstad. All rights reserved!
+This source code is made by Anders Habberstad. 
+Contact me on habberstad@mail.com before any reuse or redistrubution of this code.
+*/
+/* 
+    Created on : Jun 25, 2016, 4:25:45 PM
+    Author     : archpunk
+*/
+
+
+/*  For Animate.css*/ 
+.about-you {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+
+.background {
+    background: url("http://localhost/mywork/blocks/application/learning/template/default/image/background.jpg");
+    width: 100%;
+}
+
+.special { 
+    font-style:italic; 
+    color: deeppink;
+}
+
+
+.special-white {
+    color: #FFF;
+}
+.popup-server .popup-request {
+    background-color: #000;
+    height: auto;
+    width: 600px;
+    border: #666 1px solid;
+    max-height: 600px;
+    overflow-y: scroll;    
+}
+
+
+footer {
+    position: static;
+    bottom: 0px;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+

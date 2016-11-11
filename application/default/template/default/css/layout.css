@@ -1,0 +1,53 @@
+* { 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+#topbar {   
+    color: #fff;
+    background-color: #000;
+    height: 50px;
+    width: 100%;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    z-index: 10000;    
+}
+
+
+#bottombar {
+    color: #fff;
+    background-color: #000;
+    height: 50px;
+    width: 100%;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    z-index: 10000;    
+}
+#main {
+    color: #fff;
+    background-color: #000;
+    max-width: 100%;
+    margin: 0px auto;
+    border: solid 1px #000;
+}
+
+#left {
+display: block;
+width: 200px;
+float:left;
+}
+
+#middle {
+position: static;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#right {
+display: block;
+width: 200px;
+float:right;
+}
