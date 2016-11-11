@@ -7,6 +7,10 @@ require_once 'autoload.php'; // Autoloads classes
 //date_default_timezone_set('Europe/Oslo');
 
 //\System\Application::$config = new \System\Config('cv'); // Initiates new Config object
+
+
+
+// Slimming down index.php (One line initial application in index file!
 new \System\Builder($_REQUEST); // New loader object from URL
 
 //\System\Helper::print_pre(\System\Application::$config);
