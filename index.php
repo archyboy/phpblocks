@@ -10,7 +10,7 @@ require_once 'autoload.php'; // Autoloads classes
 
 
 
-// Slimming down index.php (One line initial application in index file!!!!!!!!!!!
+// Slimming down index.php (One line initial application in index file!!!!!!!!!!!!!.....
 new \System\Builder($_REQUEST); // New loader object from URL
 
 //\System\Helper::print_pre(\System\Application::$config);
