@@ -8,14 +8,14 @@ require_once 'autoload.php'; // Autoloads classes
 
 //\System\Application::$config = new \System\Config($projectname = 'default', $buildername = 'index'); // Initiates new Config object
 
-
+ 
 
 // Slimming down index.php (One line initial application in index file!!!!!!!!!!!!!.....
 
 $test = new \System\Builder($_REQUEST); // New loader object from URL
 
 echo $test->builderfile;
-// Hello  
+// Hello
 
 //\System\Helper::print_pre(\System\Application::$config);
 //\System\Helper::print_pre(\System\Application::$config);
