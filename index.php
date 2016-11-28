@@ -13,7 +13,7 @@ require_once 'autoload.php'; // Autoloads classes
 // Slimming down index.php (One line initial application in index file!!!!!!!!!!!!!.....
 
 $test = new \System\Builder($_REQUEST); // New loader object from URL
- 
+
 echo $test->builderfile;
 // Hello
 
