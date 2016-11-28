@@ -11,45 +11,9 @@ scrollbox('#bottombar');
 </div>
 
 <div id="main">
-<img src="<?php echo $LOGO; ?>">
-
-
-
-<h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
+This is main
 </div>
-<h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div><h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div><h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div><h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div><h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div><h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div><h1>Test page!</h1>
-<h3>This is just a page for testing purposes :)</h3>
-<h1>Test page!</h1>
-</div>
-
-
-
-<div id="main">
 
 <div id="bottombar">
 © Copyright
 </div>
-
-
-
-
