@@ -8,7 +8,8 @@
 
 namespace System;
 
-class Builder extends \System\Application {
+
+class Builder {
     public $request_array = array();
     public $url_array = array();
     public $form_array = array();
@@ -20,7 +21,7 @@ class Builder extends \System\Application {
     public $projectname;
 
     public function __construct ($request, $redirect = null) {
-        parent::$builder = $this;
+        \System\Application::$builder = $this;
 
         $this->request_array = $request;
         $this->url = rtrim($this->request_array['url'], '/');
@@ -28,23 +29,31 @@ class Builder extends \System\Application {
 
         $this->debug = new Debug;
 
-
+        // Parsing URL ROUTE and sets config and paths accordingly
         if($this->url_array[0][0] == '@') {
             $this->projectname = strtolower(ltrim($this->url_array[0], '@'));
+
             if($this->url_array[1]) {
                $this->buildername = $this->url_array[1];
-            } else {
-              $this->buildername = 'index';
-              $this->url_array[1] = $this->buildername;
-            }
-             //Helper::print_pre(\System\Application::$config);
-            array_shift($this->url_array);
+           }
+        // Check to see if Config object is set, of not set new instance in Application class
+        if(!is_object(\System\Application::$config)) {
+            \System\Application::$config = new Config(
+                (string)$this->projectname,
+                (string)$this->buildername
+            );
+            //echo '<br>NO config: <b>'. $this->projectname . '</b><br>';
         } else {
-          $this->projectname = 'default';
-          $this->buildername = 'index';
+            $this->projectname = \System\Application::$config->get('PROJECT_NAME');
+            $this->buildername = \System\Application::$config->get('BUILDER_NAME');
+            //echo '<br>IS config: <b>' . $this->projectname . '</b><br>';
         }
-        //\System\Application::$config->set('APPLICATION_NAME', (string)$this->projectname);
-        \System\Application::$config = new Config((string)$this->projectname); //
+
+    }
+            // Setting the final builder file
+            $this->builderfile = \System\Application::$config->get('BUILDER_DIRECTORY') . 'builder_' . \System\Application::$config->get('BUILDER_NAME') . '.php';
+            //echo '<br>Builder file: ' . $this->builderfile;
+
             array_shift($this->url_array);
 
             $tmp_array = $this->request_array;
@@ -65,8 +74,8 @@ class Builder extends \System\Application {
                     $this->varval_array[$key] = $value;
                 }
             }
-        $this->builderfile = \System\Application::$config->get('BUILDER_DIRECTORY') . 'builder_' . $this->buildername . '.php';
 
+        // If NOT hard redirect, load builderfile from URL
         if(!$redirect) {
               if (!is_file($this->builderfile)) {
                 \System\Application::$debug->add('FAIL', __CLASS__, 'Could NOT find the builder file: ' . $this->builderfile . ' in ' . __FILE__ . ':' . __LINE__);
@@ -74,8 +83,8 @@ class Builder extends \System\Application {
                     \System\Application::$debug->add('SUCCESS', __CLASS__, 'Included the builder file ' . $this->builderfile . ' in ' .   __FILE__ . ':' . __LINE__);
                     require_once $this->builderfile;
             }
-        } else {
-        header('Location: ' . $url);
+        } else { // Insert URL for hard rederict with URL path. Ex ""
+            header('Location: ' . $url);
         }
     }
 }

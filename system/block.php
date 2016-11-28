@@ -16,4 +16,13 @@ class Block extends \System\Application {
             echo '<br>File: ' . parent::$config->BLOCK_DIRECTORY . '<b>' . $blockname . '</b> does not exists or miss spelled in declaration<br>';
         }
     }
+
+    public function set_brick($brick) {
+      echo $brick_name = get_class($brick);
+      \System\Application::$bricks[$brick_name] = $brick;
+    }
+
+    public function get_brick($brick_name) {
+      return\System\Application::$bricks[$brick_name];
+    }
 }

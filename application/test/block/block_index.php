@@ -35,8 +35,8 @@ class JSONImage {
 
 $json_data = '{
       "info": {
-            "width": 1280,
-            "height": 720
+            "width": 600,
+            "height": 300
       },
       "layers": [
             {
@@ -69,5 +69,4 @@ $img_base64 = base64_encode(file_get_contents($img_image));
 //echo $img_base64;
 //echo \System\Application::$config->IMAGE_URL . 'logo.png';
 ?>
-<img src="<?php //echo $img_string; ?>">
-<img src="data:image/png;base64,<?php //echo $img_base64; ?>">
+<img src="<?php echo $img_string; ?>" width="400">

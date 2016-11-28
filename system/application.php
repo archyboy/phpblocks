@@ -14,6 +14,7 @@ class Application {
     // Public System Arrays[Object]
     public static $validates;
     public static $blocks;
+    public static $bricks;
 }
 
 ?>
