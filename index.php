@@ -14,8 +14,12 @@ require_once 'autoload.php'; // Autoloads classes
 
 $test = new \System\Builder($_REQUEST); // New loader object from URL
 
+<<<<<<< HEAD
 echo $test->builderfile;
 // Hello  
+=======
+// echo $test->builderfile;
+>>>>>>> 8400c0745a24420ffb1167ce614b3ca8db10b6ea
 
 //\System\Helper::print_pre(\System\Application::$config);
 //\System\Helper::print_pre(\System\Application::$config);
